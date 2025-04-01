@@ -92,6 +92,9 @@ if (!this.isValidPhoneNumber(this.formData.phonenumber)) {
         {
        next: response => {
           console.log('Doctor created successfully:', this.formData);
+          if (this.formData.photo) {
+            this.uploadPhoto(response.doc_id); 
+          }
           
           this.formData = {};
           this.toastr.success("Doctor Created Successfully", "Success", {
@@ -106,6 +109,26 @@ if (!this.isValidPhoneNumber(this.formData.phonenumber)) {
         }}
       );
   }
+  uploadPhoto(doc_id: number): void {
+    if (!doc_id || isNaN(doc_id)) {
+      console.error("Invalid doctor ID for photo upload:", doc_id);
+      return;
+    }
+    const photoFormData = new FormData();
+
+    photoFormData.append('file', this.formData.photo);
+    this.DoctorService.uploadDoctorPhoto(doc_id,  photoFormData).subscribe({
+      next: (response) => {
+        console.log('Photo uploaded successfully:', response);
+        // Success toast logic
+      },
+      error: (error) => {
+        console.error('Error uploading photo:', error);
+        // Error toast logic
+      }
+    });
+  }
+  
 
   isValidNameLength(docname: string): boolean {
 
@@ -134,20 +157,27 @@ isValidPhoneNumber(phone: string): boolean {
 
 
 
+// onFileSelected(event: any): void {
+//   const input = event.target as HTMLInputElement;
+//   if (input.files && input.files.length > 0) {
+//     this.formData.photo = input.files[0];
+//     console.log('Selected file:', this.formData.photo); // Log the selected file
+
+//     // Optionally, preview the file
+//     const reader = new FileReader();
+//     reader.onload = (e) => {
+//       if (e.target) {
+//         this.photoUrl = e.target.result; // For displaying the selected file preview
+//       }
+//     };
+//     reader.readAsDataURL(this.formData.photo);
+//   }
+// }
 onFileSelected(event: any): void {
   const input = event.target as HTMLInputElement;
   if (input.files && input.files.length > 0) {
     this.formData.photo = input.files[0];
-    console.log('Selected file:', this.formData.photo); // Log the selected file
-
-    // Optionally, preview the file
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      if (e.target) {
-        this.photoUrl = e.target.result; // For displaying the selected file preview
-      }
-    };
-    reader.readAsDataURL(this.formData.photo);
+    console.log('Selected file:', this.formData.photo);
   }
 }
 

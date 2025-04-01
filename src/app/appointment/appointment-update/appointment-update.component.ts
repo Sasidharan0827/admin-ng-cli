@@ -43,6 +43,7 @@ export class AppointmentUpdateComponent {
     this.router.navigateByUrl(url)
   }
   updateAppointment(id: number): void {
+    console.log("appointment id===>",id)
     this.appointmentservice.upadteappointment(id, this.appointment)
       .subscribe({
         next: response => {

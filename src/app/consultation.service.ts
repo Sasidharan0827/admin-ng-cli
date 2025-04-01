@@ -53,7 +53,7 @@ create_consultations(formData: any) {
   
 }
 upadteconsultation(con_id: number, consultation: any) {
-  return this.http.patch(`http://localhost:3000/consultation/${con_id}`, consultation)
+  return this.http.patch(`http://localhost:3000/consultation/doctor/${con_id}`, consultation)
 }
 
 SessionSearch(ConsultationSessionSearch: string) {

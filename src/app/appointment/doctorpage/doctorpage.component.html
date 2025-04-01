@@ -14,7 +14,7 @@
      
       
         <div *ngFor="let doctor of doctors" class="box">
-            <img [src]="imageUrl" >
+            <img [src]="doctor.imageUrl || (imageUrl + doctor.doc_id + '.jpg')" >
             <h3>{{ doctor.docname }}</h3>
             <p>{{ doctor.specalist }} Doctor</p>
             <button (click)="  selectDoctor(doctor.doc_id)">Appointment</button>

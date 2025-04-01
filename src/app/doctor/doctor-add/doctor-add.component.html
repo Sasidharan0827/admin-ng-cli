@@ -29,8 +29,8 @@
             <input type="education" id="education" placeholder="Enter doctor education" required name="education" [(ngModel)]="formData.education">
             
           </div>
-          <div class="photo">
-            <label >
+          <div class="photo"  >
+            <label class="styled-file-input">
               Photo:
           </label>
             <input type="file" id="photo" placeholder="Enter doctor photo" required name="photo"  (change)="onFileSelected($event)" class="styled-file-input">

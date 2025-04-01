@@ -25,6 +25,7 @@ import { ConsultationDoctorComponent } from './consultation-doctor/consultation-
 import { SelectSubscriberComponent } from './appointment/select-subscriber/select-subscriber.component';
 import { UpdateDoctorConsultationComponent } from './doctor/update-doctor-consultation/update-doctor-consultation.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -138,7 +139,8 @@ const routes: Routes = [
         path:'update-doctor-consultation',
         component:UpdateDoctorConsultationComponent,
         outlet:'mainnav'
-      }
+      },
+   
 
     ]
   },

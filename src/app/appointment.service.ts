@@ -60,7 +60,7 @@ createAppointment(formData: any) {
   
   
   upadteappointment(id: number, appoinment: any) {
-    return this.http.patch(`http://localhost:3000/doctor/${id}`, appoinment)
+    return this.http.patch(`http://localhost:3000/appoinment/${id}`, appoinment)
   }
   DoctorSearch(AppointmentDoctorSearch: string) {
     let url = `http://localhost:3000/appoinment`;
@@ -112,7 +112,7 @@ createAppointment(formData: any) {
 
     
     conUrl='http://localhost:3000/doctor'
-    getDayConsultation(doc_id: number, dayOfWeek: string): Observable<any> {
+    getDayConsultation(doc_id: number, dayOfWeek: string,): Observable<any> {
       const url = `${this.conUrl}/${doc_id}/consultations/${dayOfWeek}`;
       return this.http.get(url);
     }

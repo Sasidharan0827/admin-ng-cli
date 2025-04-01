@@ -33,6 +33,7 @@ import { UpdateDoctorConsultationComponent } from './doctor/update-doctor-consul
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +60,7 @@ import { UpdateDoctorConsultationComponent } from './doctor/update-doctor-consul
     ConsultationDoctorComponent,
     SelectSubscriberComponent,
     UpdateDoctorConsultationComponent,
-
+    
    
   ],
   imports: [

@@ -25,24 +25,24 @@ export class UpdateDoctorConsultationComponent {
 
   formData: DayConsultation[] = [
     
-    // {day: 'Monday', session: 'Morning', start_time: '', end_time: '', doc_id:'',docname:''},
-    // { day: 'Monday', session: 'Afternoon', start_time: '', end_time: '',  doc_id:'',docname:''},
-    // { day: 'Monday', session: 'Evening', start_time: '', end_time: '',  doc_id:'',docname:'' },
-    // { day: 'Tuesday', session: 'Morning', start_time: '', end_time: '',  doc_id:'',docname:''},
-    // { day: 'Tuesday', session: 'Afternoon', start_time: '', end_time: '',  doc_id:'',docname:'' },
-    // { day: 'Tuesday', session: 'Evening', start_time: '', end_time: '',  doc_id:'',docname:'' },
-    // { day: 'Wednesday', session: 'Morning', start_time: '', end_time: '',  doc_id:'',docname:'' },
-    // { day: 'Wednesday', session: 'Afternoon', start_time: '', end_time: '',  doc_id:'',docname:'' },
-    // { day: 'Wednesday', session: 'Evening', start_time: '', end_time: '',  doc_id:'',docname:''},
-    // { day: 'Thursday', session: 'Morning', start_time: '', end_time: '',  doc_id:'',docname:'' },
-    // { day: 'Thursday', session: 'Afternoon', start_time: '', end_time: '',  doc_id:'',docname:'' },
-    // { day: 'Thursday', session: 'Evening', start_time: '', end_time: '',  doc_id:'',docname:''},
-    // { day: 'Friday', session: 'Morning', start_time: '', end_time: '',  doc_id:'',docname:''},
-    // { day: 'Friday', session: 'Afternoon', start_time: '', end_time: '',  doc_id:'',docname:'' },
-    // { day: 'Friday', session: 'Evening', start_time: '', end_time: '',  doc_id:'',docname:''},
-    // { day: 'Saturday', session: 'Morning', start_time: '', end_time: '',  doc_id:'',docname:''},
-    // { day: 'Saturday', session: 'Afternoon', start_time: '', end_time: '',  doc_id:'',docname:'' },
-    // { day: 'Saturday', session: 'Evening', start_time: '', end_time: '',  doc_id:'',docname:'' }
+    // {day: 'Monday', session: 'Morning', start_time: '', end_time: '', doc_id:'',docname:' ',con_id:'consultation.con_id'},
+    // { day: 'Monday', session: 'Afternoon', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:''},
+    // { day: 'Monday', session: 'Evening', start_time: '', end_time: '',  doc_id:'',docname:'' ,con_id:''},
+    // { day: 'Tuesday', session: 'Morning', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:''},
+    // { day: 'Tuesday', session: 'Afternoon', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:'' },
+    // { day: 'Tuesday', session: 'Evening', start_time: '', end_time: '',  doc_id:'',docname:'' ,con_id:''},
+    // { day: 'Wednesday', session: 'Morning', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:'' },
+    // { day: 'Wednesday', session: 'Afternoon', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:'' },
+    // { day: 'Wednesday', session: 'Evening', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:''},
+    // { day: 'Thursday', session: 'Morning', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:'' },
+    // { day: 'Thursday', session: 'Afternoon', start_time: '', end_time: '',  doc_id:'',docname:'' ,con_id:''},
+    // { day: 'Thursday', session: 'Evening', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:''},
+    // { day: 'Friday', session: 'Morning', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:''},
+    // { day: 'Friday', session: 'Afternoon', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:'' },
+    // { day: 'Friday', session: 'Evening', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:''},
+    // { day: 'Saturday', session: 'Morning', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:''},
+    // { day: 'Saturday', session: 'Afternoon', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:'' },
+    // { day: 'Saturday', session: 'Evening', start_time: '', end_time: '',  doc_id:'',docname:'',con_id:'' }
     
   ];
   isFormValid: boolean = true;

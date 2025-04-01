@@ -34,6 +34,7 @@ export class ConsultationupdateComponent {
     this.router.navigateByUrl(url)
   }
   updateConsultation(con_id: number): void {
+    console.log("Consultation id",con_id)
     
     this.ConsultationService.upadteconsultation(con_id, this.consultation)
       .subscribe({

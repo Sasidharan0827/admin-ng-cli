@@ -1,6 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
+import { Observable, Subject, takeUntil } from 'rxjs';
 import { DoctorService } from 'src/app/doctorservice.service';
 
 @Component({
@@ -9,9 +10,11 @@ import { DoctorService } from 'src/app/doctorservice.service';
   styleUrls: ['./doctorpage.component.scss']
 })
 export class DoctorpageComponent {
-  imageUrl = '/assets/doc2.jpg';
+  // imageUrl = '/assets/doc2.jpg';
+   imageUrl = 'http://localhost:3000/upload-images/'; // URL for imagesC:\Users\Sasidharan K\ws\api-nestjs-svr\uploads\profileimages
 
   doctors: any[] = [];
+  doctorImages: any[] = [];
   selectedDoctor: Object | undefined;
   user: any;
   searchText: string='';
@@ -19,7 +22,7 @@ export class DoctorpageComponent {
   docnamesearch: string='';
   
 
-  constructor(private doctorService: DoctorService, private router: Router) {
+  constructor(private doctorService: DoctorService, private router: Router,private http: HttpClient) {
     this.fetchDoctors();
     const navigation = this.router.getCurrentNavigation();
     if (navigation && navigation.extras.state) {
@@ -82,4 +85,17 @@ onSearchdocname() {
    
   this.doctorService.searchDoctorname(this.docnamesearch);
 }
+
+
+getDoctors(): void {
+  this.http.get<any[]>('http://localhost:3000/doctors').subscribe({
+    next:(data) => {
+      this.doctorImages = data; // Assign the response to the doctorImages array
+    },
+    error:(error) => {
+      console.error('Error fetching doctors:', error);
+    }
+});
+}
+
 }

@@ -10,7 +10,12 @@ import { DoctorsDto } from './doctor/doctordto';
 })
 
 export class DoctorService {
- 
+
+  uploadDoctorPhoto(doc_id: number, formData: FormData): Observable<any> {
+    const uploadUrl = `http://localhost:3000/upload-images/image/${doc_id}`;
+    return this.http.post<any>(uploadUrl, formData);
+  }
+  
   ConsultationofDoctor(doc_id: any) {
     throw new Error('Method not implemented.');
   }
