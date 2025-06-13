@@ -30,6 +30,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ConsultationDoctorComponent } from './consultation-doctor/consultation-doctor.component';
 import { SelectSubscriberComponent } from './appointment/select-subscriber/select-subscriber.component';
 import { UpdateDoctorConsultationComponent } from './doctor/update-doctor-consultation/update-doctor-consultation.component';
+import { WarningComponent } from './warning/warning.component';
 
 
 
@@ -60,6 +61,7 @@ import { UpdateDoctorConsultationComponent } from './doctor/update-doctor-consul
     ConsultationDoctorComponent,
     SelectSubscriberComponent,
     UpdateDoctorConsultationComponent,
+    WarningComponent,
     
    
   ],

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AdminAddComponent } from './admin/admin-add/admin-add.component';
@@ -24,7 +24,7 @@ import { ConsultationupdateComponent } from './consultation/consultationupdate/c
 import { ConsultationDoctorComponent } from './consultation-doctor/consultation-doctor.component';
 import { SelectSubscriberComponent } from './appointment/select-subscriber/select-subscriber.component';
 import { UpdateDoctorConsultationComponent } from './doctor/update-doctor-consultation/update-doctor-consultation.component';
-
+import { WarningComponent } from './warning/warning.component';
 
 const routes: Routes = [
   {
@@ -36,123 +36,120 @@ const routes: Routes = [
     component: MainnavComponent,
     children: [
       {
-        path:'',
-        pathMatch:'full',
-        redirectTo:'admin-list',
-        outlet:'mainnav'
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'admin-list',
+        outlet: 'mainnav',
       },
       {
         path: 'admin-list',
         component: AdminListComponent,
-        outlet: 'mainnav'
+        outlet: 'mainnav',
       },
       {
         path: 'doctor-list',
         component: DoctorListComponent,
-        outlet: 'mainnav' 
+        outlet: 'mainnav',
       },
       {
         path: 'user-list',
         component: UserListComponent,
-        outlet: 'mainnav' 
+        outlet: 'mainnav',
       },
       {
         path: 'appointment-list',
         component: AppointmentListComponent,
-        outlet: 'mainnav' 
+        outlet: 'mainnav',
       },
       {
-        path:'admin-add',
-        component:AdminAddComponent,
-        outlet: 'mainnav'
+        path: 'admin-add',
+        component: AdminAddComponent,
+        outlet: 'mainnav',
       },
-     
-      {
-        path:'admin-update',
-        component:AdminUpdateComponent,
-        outlet: 'mainnav'
-      },
-    
-      {
-        path:'doctor-add',
-        component:DoctorAddComponent,
-        outlet: 'mainnav'
-      },
-      {
-        path:'doctor-update',
-        component:DoctorUpdateComponent,
-        outlet: 'mainnav'
-      },
-     
-      {
-        path:'user-add',
-        component:UserAddComponent,
-        outlet: 'mainnav'
-      },
-      {
-        path:'user-update',
-        component:UserUpdateComponent,
-        outlet: 'mainnav'
-      },
-      {
-        path:'appointment-add',
-        component:AppointmentAddComponent ,
-        outlet: 'mainnav'
-      },
-      
-      {
-        path:'appointment-update',
-        component:AppointmentUpdateComponent,
-        outlet: 'mainnav'
-      },
-      {
-        path:'doctorpage',
-        component:DoctorpageComponent,
-        outlet: 'mainnav'
-      },
-      {
-        path:'consultationlist',
-        component:ConsultationlistComponent,
-        outlet: 'mainnav'
-      },
-      {
-        path:'consultationadd',
-        component:ConsultationaddComponent,
-        outlet: 'mainnav'
-      },
-      {
-        path:'consultationupdate',
-        component:ConsultationupdateComponent,
-        outlet: 'mainnav'
-      },
-      {
-        path:'consultation-doctor',
-        component:ConsultationDoctorComponent,
-        outlet: 'mainnav'
-      },
-      {
-        path:'select-subscriber',
-        component:SelectSubscriberComponent,
-        outlet: 'mainnav'
-      },
-      {
-        path:'update-doctor-consultation',
-        component:UpdateDoctorConsultationComponent,
-        outlet:'mainnav'
-      },
-   
 
-    ]
+      {
+        path: 'admin-update',
+        component: AdminUpdateComponent,
+        outlet: 'mainnav',
+      },
+
+      {
+        path: 'doctor-add',
+        component: DoctorAddComponent,
+        outlet: 'mainnav',
+      },
+      {
+        path: 'doctor-update',
+        component: DoctorUpdateComponent,
+        outlet: 'mainnav',
+      },
+
+      {
+        path: 'user-add',
+        component: UserAddComponent,
+        outlet: 'mainnav',
+      },
+      {
+        path: 'user-update',
+        component: UserUpdateComponent,
+        outlet: 'mainnav',
+      },
+      {
+        path: 'appointment-add',
+        component: AppointmentAddComponent,
+        outlet: 'mainnav',
+      },
+
+      {
+        path: 'appointment-update',
+        component: AppointmentUpdateComponent,
+        outlet: 'mainnav',
+      },
+      {
+        path: 'doctorpage',
+        component: DoctorpageComponent,
+        outlet: 'mainnav',
+      },
+      {
+        path: 'consultationlist',
+        component: ConsultationlistComponent,
+        outlet: 'mainnav',
+      },
+      {
+        path: 'consultationadd',
+        component: ConsultationaddComponent,
+        outlet: 'mainnav',
+      },
+      {
+        path: 'consultationupdate',
+        component: ConsultationupdateComponent,
+        outlet: 'mainnav',
+      },
+      {
+        path: 'consultation-doctor',
+        component: ConsultationDoctorComponent,
+        outlet: 'mainnav',
+      },
+      {
+        path: 'select-subscriber',
+        component: SelectSubscriberComponent,
+        outlet: 'mainnav',
+      },
+      {
+        path: 'update-doctor-consultation',
+        component: UpdateDoctorConsultationComponent,
+        outlet: 'mainnav',
+      },
+    ],
   },
-  
+  {
+    path: 'warning',
+    component: WarningComponent,
+  },
 ];
-
-
-  
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
- export class AppRoutingModule { }
+export class AppRoutingModule {}
